@@ -40,8 +40,9 @@ api = get_api_access()
 
 while True:
 
+	timing = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
 	price = get_forestBearPrice()
-	message = "The price of Forest Bear is $" + price
+	message = "The price of Forest Bear is $" + price +".  The time is " + timing
 
 	api.update_status(status=message)
 	time.sleep(43200)
