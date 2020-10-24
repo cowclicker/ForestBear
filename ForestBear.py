@@ -2,6 +2,14 @@ import requests
 import tweepy
 import time
 
+# use this for production; set vars in heroku dashboard
+from os import environ
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
+
+
 def get_forestBearPrice():
 	r = requests.get('https://api.scryfall.com/cards/ptk/135');
 	j = r.json();
@@ -16,11 +24,11 @@ def get_api_access():
 		your twitter handle by going to app.twitter.com
 		
 	"""
-	consumer_key = ""
-	consumer_secret = ""
+	consumer_key = CONSUMER_KEY
+	consumer_secret = CONSUMER_SECRET
 
-	access_token = ""
-	access_token_secret = ""
+	access_token = ACCESS_KEY
+	access_token_secret = ACCESS_SECRET
 
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_token, access_token_secret)
