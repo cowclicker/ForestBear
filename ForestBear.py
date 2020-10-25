@@ -48,11 +48,11 @@ while True:
 		message = "The price of Forest Bear is $" + price +".  The time is " + timing
 
 		api.update_status(status=message)
-		counter++
+		counter+=1
 		time.sleep(1200)
 	elif(counter == 18):
 		counter = 0
 	else:
-		counter++
+		counter+=1
 		time.sleep(1200)
 
