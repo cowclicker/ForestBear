@@ -38,13 +38,9 @@ def get_api_access():
 
 api = get_api_access()
 
-counter = 0
+timing = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
+price = get_forestBearPrice()
+message = "The price of Forest Bear is $" + price +".  The time is " + timing
 
-while True:
-	
-	timing = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
-	price = get_forestBearPrice()
-	message = "The price of Forest Bear is $" + price +".  The time is " + timing
+api.update_status(status=message)
 
-	api.update_status(status=message)
-	time.sleep(1200)
