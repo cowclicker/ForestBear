@@ -47,4 +47,4 @@ while True:
 	message = "The price of Forest Bear is $" + price +".  The time is " + timing
 
 	api.update_status(status=message)
-
+	time.sleep(1200)
