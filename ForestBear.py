@@ -42,17 +42,9 @@ counter = 0
 
 while True:
 	
-	if(counter == 0):
-		timing = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
-		price = get_forestBearPrice()
-		message = "The price of Forest Bear is $" + price +".  The time is " + timing
+	timing = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
+	price = get_forestBearPrice()
+	message = "The price of Forest Bear is $" + price +".  The time is " + timing
 
-		api.update_status(status=message)
-		counter+=1
-		time.sleep(1200)
-	elif(counter == 18):
-		counter = 0
-	else:
-		counter+=1
-		time.sleep(1200)
+	api.update_status(status=message)
 
